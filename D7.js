@@ -289,13 +289,19 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+console.log("-----------");
+console.log("Domanda 9");
+
 function filmPiuVecchio() {
   let vecchio = movies[0];
-  movies.forEach((film) => {
+
+  movies.forEach(diffAnno);
+
+  function diffAnno(film) {
     if (parseInt(film.Year) < parseInt(vecchio.Year)) {
       vecchio = film;
     }
-  });
+  }
   return vecchio;
 }
 
@@ -328,9 +334,11 @@ console.log("-----------");
 console.log("Domanda 11");
 
 function titoliFilm() {
-  return movies.map(function (film) {
+  return movies.map(titoli);
+
+  function titoli(film) {
     return film.Title;
-  });
+  }
 }
 
 console.log(titoliFilm());
@@ -346,9 +354,10 @@ console.log("-----------");
 console.log("Domanda 12");
 
 function filmMillennioCorrente() {
-  return movies.filter(function (film) {
+  return movies.filter(corrente);
+  function corrente(film) {
     return parseInt(film.Year) >= 2000;
-  });
+  }
 }
 
 console.log(filmMillennioCorrente());
@@ -409,3 +418,15 @@ function indiceFilmAnno() {
 console.log(indiceFilmAnno());
 
 console.log("-----------");
+
+let text = "";
+const fruits = ["apple", "orange", "cherry"];
+fruits.forEach(myFunction);
+
+const result = text;
+
+function myFunction(item, index) {
+  text += index + ": " + " " + item;
+}
+
+console.log(result);
