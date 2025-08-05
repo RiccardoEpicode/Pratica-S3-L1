@@ -343,6 +343,18 @@ function titoliFilm() {
 
 console.log(titoliFilm());
 
+console.log("------");
+console.log("Soluzione con for:");
+let movieTitles = [];
+
+for (let i = 0; i < movies.length; i++) {
+  const movie = movies[i];
+
+  movieTitles.push(movie.Title);
+}
+
+console.log(movieTitles);
+
 console.log("-----------");
 
 /* ESERCIZIO 12 (filter)
